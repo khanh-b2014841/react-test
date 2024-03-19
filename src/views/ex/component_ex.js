@@ -8,69 +8,69 @@ import ExChildComponent from "./childComponent_ex";
  * state -> obj (key: value)
  */
 
-class ExComponent extends React.Component{
+class ExComponent extends React.Component {
 
     state = {
         firstName: '',
         lastName: '',
-        arrJobs:[
-            {id:'job1', title:'IT', salary:'1000$'},
-            {id:'job2', title:'Testers', salary:'800$'},
-            {id:'job3', title:'manager', salary:'2000$'}
+        arrJobs: [
+            { id: 'job1', title: 'IT', salary: '1000' },
+            { id: 'job2', title: 'Testers', salary: '800' },
+            { id: 'job3', title: 'manager', salary: '2000' }
         ]
     }
-    handleFirstName = (event) =>{
+    handleFirstName = (event) => {
         this.setState({
             firstName: event.target.value
 
         })
     }
 
-    handleLastName =(event) =>{
+    handleLastName = (event) => {
         this.setState({
             lastName: event.target.value
         })
     }
 
-    handleSubmit = (event) =>{
+    handleSubmit = (event) => {
         event.preventDefault()
         console.log("check data input>>>", this.state)
     }
-    
+
     render() {
         console.log(">>render", this.state)
-        
+
 
         // const name = "khanh"
-        return(
+        return (
             <>
                 <div>
                     hello this is my form
                 </div>
                 <form>
-                     <label htmlFor="fname">First name:</label><br/>
-                     <input type="text" value={this.state['firstName']}
-                     onChange={(event)=>{this.handleFirstName(event)}}/><br/>
-                     <label htmlFor="lname">Last name:</label><br/>
-                     <input type="text" value={this.state['lastName']}
-                     onChange={(event)=>{this.handleLastName(event)}}/><br/><br/>
-                     <input 
-                     type="submit" 
-                     value="submit"
-                    
-                     onClick={(event)=>{this.handleSubmit(event)}}/>
-                </form> 
+                    <label htmlFor="fname">First name:</label><br />
+                    <input type="text" value={this.state['firstName']}
+                        onChange={(event) => { this.handleFirstName(event) }} /><br />
+                    <label htmlFor="lname">Last name:</label><br />
+                    <input type="text" value={this.state['lastName']}
+                        onChange={(event) => { this.handleLastName(event) }} /><br /><br />
+                    <input
+                        type="submit"
+                        value="submit"
+
+                        onClick={(event) => { this.handleSubmit(event) }} />
+                </form>
 
 
-                <ExChildComponent 
-                firstName = {this.state.firstName}
-                lastName = {this.state.lastName}
-                age = "23"
-                jobs = {this.state.arrJobs}
-                
+                <ExChildComponent
+                    firstName={this.state.firstName}
+                    lastName={this.state.lastName}
+                    age="23"
+                    jobs={this.state.arrJobs}
+
                 />
-               
-              
+
+
             </>
         )
     }
