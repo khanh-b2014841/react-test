@@ -17,21 +17,29 @@ class ExComponent extends React.Component{
         this.setState({
             name: e.target.value
         })
+    }
 
+    handleClickButton = () => {
+        console.log("hit the button")
+        alert ("why click me ?")
     }
     render() {
 
         // const name = "khanh"
         return(
             <>
-                <div>
+                <div className="first">
                      Hello my name is {this.state['name']}
                      {/* hoac this.state.name */}
                 </div>
                 <input value={this.state['name']} type="text"
                 onChange = {(e) => this.handleOnChangeName(e)}></input>
-                <div>
+                <div className="second">
                     I'm {this.state.age}
+                </div>
+                <div className="third">
+                    <button onClick={() => {this.handleClickButton()}}>click me</button>
+
                 </div>
             </>
         )
