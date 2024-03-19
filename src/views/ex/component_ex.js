@@ -9,47 +9,50 @@ import React from "react";
 class ExComponent extends React.Component{
 
     state = {
-        name: "Khanh",
-        age: "23"
+        firstName: '',
+        lastName: ''
+
+    }
+    handleFirstName = (event) =>{
+        this.setState({
+            firstName: event.target.value
+
+        })
+    }
+
+    handleLastName =(event) =>{
+        this.setState({
+            lastName: event.target.value
+        })
+    }
+
+    handleSubmit = (event) =>{
+        event.preventDefault()
+        console.log("check data input>>>", this.state)
+    }
     
-      }
-    handleOnChangeName = (e) =>{
-        this.setState({
-            name: e.target.value
-        })
-    }
-
-    handleOnChageAge =(event) =>{
-        this.setState({
-            age: event.target.value
-        })
-    }
-
-    handleClickButton = () => {
-       
-        alert ("why click me ?")
-    }
     render() {
+        console.log(">>render", this.state)
+        
 
         // const name = "khanh"
         return(
             <>
-                <div className="first">
-                <input value={this.state['name']} type="text"
-                onChange = {(e) => this.handleOnChangeName(e)}></input>
-                     Hello my name is {this.state['name']}
-                     {/* hoac this.state.name */}
+                <div>
+                    hello this is my form
                 </div>
-                
-                <div className="second">
-                    <input value={this.state.age} type="text"
-                    onChange = {(event) => this.handleOnChageAge(event)}></input>
-                     I'm {this.state.age}
-                </div>
-                <div className="third">
-                    <button onClick={() => {this.handleClickButton()}}>click me</button>
-
-                </div>
+                <form>
+                     <label htmlFor="fname">First name:</label><br/>
+                     <input type="text" value={this.state['firstName']}
+                     onChange={(event)=>{this.handleFirstName(event)}}/><br/>
+                     <label htmlFor="lname">Last name:</label><br/>
+                     <input type="text" value={this.state['lastName']}
+                     onChange={(event)=>{this.handleLastName(event)}}/><br/><br/>
+                     <input 
+                     type="submit" 
+                    
+                     onClick={(event)=>{this.handleSubmit(event)}}/>
+                </form> 
             </>
         )
     }
