@@ -13,6 +13,12 @@ class ExComponent extends React.Component{
         age: "23"
     
       }
+    handleOnChangeName = (e) =>{
+        this.setState({
+            name: e.target.value
+        })
+
+    }
     render() {
 
         // const name = "khanh"
@@ -22,6 +28,8 @@ class ExComponent extends React.Component{
                      Hello my name is {this.state['name']}
                      {/* hoac this.state.name */}
                 </div>
+                <input value={this.state['name']} type="text"
+                onChange = {(e) => this.handleOnChangeName(e)}></input>
                 <div>
                     I'm {this.state.age}
                 </div>
