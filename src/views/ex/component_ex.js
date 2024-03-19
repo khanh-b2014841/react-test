@@ -12,8 +12,12 @@ class ExComponent extends React.Component{
 
     state = {
         firstName: '',
-        lastName: ''
-
+        lastName: '',
+        arrJobs:[
+            {id:'job1', title:'IT', salary:'1000$'},
+            {id:'job2', title:'Testers', salary:'800$'},
+            {id:'job3', title:'manager', salary:'2000$'}
+        ]
     }
     handleFirstName = (event) =>{
         this.setState({
@@ -58,9 +62,15 @@ class ExComponent extends React.Component{
                 </form> 
 
 
-                <ExChildComponent name = {'child one'}/>
-                <ExChildComponent name = {'child two'}/>
-                <ExChildComponent name = {'child three'}/>
+                <ExChildComponent 
+                firstName = {this.state.firstName}
+                lastName = {this.state.lastName}
+                age = "23"
+                jobs = {this.state.arrJobs}
+                
+                />
+               
+              
             </>
         )
     }
