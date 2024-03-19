@@ -1,5 +1,7 @@
 import React from "react";
 
+import ExChildComponent from "./childComponent_ex";
+
 /**
  * react.Fragment
  * JSX luon tra ve mot khoi
@@ -50,9 +52,15 @@ class ExComponent extends React.Component{
                      onChange={(event)=>{this.handleLastName(event)}}/><br/><br/>
                      <input 
                      type="submit" 
+                     value="submit"
                     
                      onClick={(event)=>{this.handleSubmit(event)}}/>
                 </form> 
+
+
+                <ExChildComponent name = {'child one'}/>
+                <ExChildComponent name = {'child two'}/>
+                <ExChildComponent name = {'child three'}/>
             </>
         )
     }
