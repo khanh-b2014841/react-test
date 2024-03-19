@@ -10,7 +10,11 @@ import ExComponent from './ex/component_ex';
  * 
  */
 
+
+
 const App = () => {
+
+
 // function App() {
   //JSX
   return (
