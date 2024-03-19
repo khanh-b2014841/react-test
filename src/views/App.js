@@ -1,7 +1,18 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
-function App() {
+import ExComponent from './ex/component_ex';
+
+/**
+ * 2 component: class component && funcion component
+ * 
+ * 
+ * 
+ */
+
+const App = () => {
+// function App() {
+  //JSX
   return (
     <div className="App">
       <header className="App-header">
@@ -9,6 +20,8 @@ function App() {
         <p>
           Hello word!
         </p>
+
+     
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +30,8 @@ function App() {
         >
           Learn React
         </a>
+        <ExComponent />
+        {/* <ExComponent></ExComponent> */}
       </header>
     </div>
   );
